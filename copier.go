@@ -689,8 +689,8 @@ func set(to, from reflect.Value, deepCopy bool, converters map[converterPair]Typ
 // lookupAndCopyWithConverter looks up the type pair, on success the TypeConverter Fn func is called to copy src to dst field.
 func lookupAndCopyWithConverter(to, from reflect.Value, converters map[converterPair]TypeConverter) (copied bool, err error) {
 	pair := converterPair{
-		SrcType: to.Type(),
-		DstType: from.Type(),
+		SrcType: from.Type(),
+		DstType: to.Type(),
 	}
 
 	if cnv, ok := converters[pair]; ok {
