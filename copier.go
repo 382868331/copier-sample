@@ -558,7 +558,7 @@ func deepFields(reflectType reflect.Type) []reflect.StructField {
 }
 
 func indirect(reflectValue reflect.Value) reflect.Value {
-	for reflectValue.Kind() == reflect.Ptr {
+	if reflectValue.Kind() == reflect.Ptr {
 		reflectValue = reflectValue.Elem()
 	}
 	return reflectValue
