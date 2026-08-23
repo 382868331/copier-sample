@@ -574,7 +574,7 @@ func indirectType(reflectType reflect.Type) (_ reflect.Type, isPtr bool) {
 
 func set(to, from reflect.Value, deepCopy bool, converters map[converterPair]TypeConverter) (bool, error) {
 	if !from.IsValid() {
-		return true, nil
+		return false, nil
 	}
 	if ok, err := lookupAndCopyWithConverter(to, from, converters); err != nil {
 		return false, err
