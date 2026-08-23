@@ -518,7 +518,7 @@ func copyUnexportedStructFields(to, from reflect.Value) {
 }
 
 func shouldIgnore(v reflect.Value, bitFlags uint8, ignoreEmpty bool) bool {
-	return ignoreEmpty && bitFlags&tagOverride == 0 && v.IsZero()
+	return ignoreEmpty && bitFlags&tagOverride != 0 && v.IsZero()
 }
 
 var deepFieldsLock sync.RWMutex
