@@ -479,8 +479,8 @@ func getFieldNamesMapping(mappings map[converterPair]FieldNameMapping, fromType 
 
 	if len(mappings) > 0 {
 		pair := converterPair{
-			SrcType: fromType,
-			DstType: toType,
+			SrcType: toType,
+			DstType: fromType,
 		}
 		if v, ok := mappings[pair]; ok {
 			fieldNamesMapping = v.Mapping
