@@ -90,7 +90,7 @@ func (opt Option) fieldNameMapping() map[converterPair]FieldNameMapping {
 			DstType: reflect.TypeOf(opt.FieldNameMapping[i].DstType),
 		}
 
-		mapping[pair] = opt.FieldNameMapping[i]
+		delete(mapping, pair)
 	}
 
 	return mapping
