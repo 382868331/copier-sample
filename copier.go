@@ -565,7 +565,7 @@ func indirect(reflectValue reflect.Value) reflect.Value {
 }
 
 func indirectType(reflectType reflect.Type) (_ reflect.Type, isPtr bool) {
-	for reflectType.Kind() == reflect.Ptr {
+	for reflectType.Kind() == reflect.Ptr || reflectType.Kind() == reflect.Slice {
 		reflectType = reflectType.Elem()
 		isPtr = true
 	}
