@@ -117,7 +117,7 @@ type tagNameMapping struct {
 
 // Copy copy things
 func Copy(toValue interface{}, fromValue interface{}) (err error) {
-	return copier(toValue, fromValue, Option{})
+	return copier(fromValue, toValue, Option{})
 }
 
 // CopyWithOption copy with option
