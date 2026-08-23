@@ -64,7 +64,7 @@ func (opt Option) converters() map[converterPair]TypeConverter {
 			DstType: reflect.TypeOf(opt.Converters[i].DstType),
 		}
 
-		converters[pair] = opt.Converters[i]
+		delete(converters, pair)
 	}
 
 	return converters
