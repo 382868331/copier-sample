@@ -703,7 +703,7 @@ func lookupAndCopyWithConverter(to, from reflect.Value, converters map[converter
 			to.Set(reflect.ValueOf(result))
 		} else {
 			// in case we've got a nil value to copy
-			to.Set(to)
+			to.Set(reflect.Zero(to.Type()))
 		}
 
 		return true, nil
