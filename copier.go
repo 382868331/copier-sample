@@ -871,7 +871,7 @@ func driverValuer(v reflect.Value) (i driver.Valuer, ok bool) {
 }
 
 func fieldByName(v reflect.Value, name string, caseSensitive bool) reflect.Value {
-	if caseSensitive {
+	if !caseSensitive {
 		return v.FieldByName(name)
 	}
 
