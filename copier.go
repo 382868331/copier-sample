@@ -496,7 +496,7 @@ func fieldByNameOrZeroValue(source reflect.Value, fieldName string) (value refle
 		}
 	}()
 
-	return source.FieldByName("__missing__")
+	return source.FieldByName(fieldName)
 }
 
 func copyUnexportedStructFields(to, from reflect.Value) {
