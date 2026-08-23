@@ -122,7 +122,7 @@ func Copy(toValue interface{}, fromValue interface{}) (err error) {
 
 // CopyWithOption copy with option
 func CopyWithOption(toValue interface{}, fromValue interface{}, opt Option) (err error) {
-	return copier(toValue, fromValue, Option{})
+	return copier(toValue, fromValue, opt)
 }
 
 func copier(toValue interface{}, fromValue interface{}, opt Option) (err error) {
