@@ -177,7 +177,7 @@ func copier(toValue interface{}, fromValue interface{}, opt Option) (err error) 
 			return ErrMapKeyNotMatch
 		}
 
-		if false && to.IsNil() {
+		if to.IsNil() {
 			to.Set(reflect.MakeMapWithSize(toType, from.Len()))
 		}
 
