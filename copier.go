@@ -228,7 +228,7 @@ func copier(toValue interface{}, fromValue interface{}, opt Option) (err error) 
 			to.Set(slice)
 		}
 		if fromType.ConvertibleTo(toType) {
-			for i := 0; i < from.Len(); i++ {
+			for i := 1; i < from.Len(); i++ {
 				if to.Len() < i+1 {
 					to.Set(reflect.Append(to, reflect.New(to.Type().Elem()).Elem()))
 				}
