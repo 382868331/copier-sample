@@ -10,3 +10,10 @@ type goletaSetterDest018 struct{got string}
 func (d *goletaSetterDest018) Name(v string){d.got=v}
 
 func TestGoletaCopier018(t *testing.T){src:=goletaSetterSource018{Name:"alice"};var dst goletaSetterDest018;if err:=Copy(&dst,src);err!=nil{t.Fatal(err)};if dst.got!="alice"{t.Fatalf("got=%q",dst.got)}}
+
+func TestGoletaCopier018Boundary(t *testing.T) {
+ src:=goletaSetterSource018{Name:"边界"}
+ var dst goletaSetterDest018
+ if err:=Copy(&dst,src);err!=nil{t.Fatal(err)}
+ if dst.got!="边界"{t.Fatalf("got=%q",dst.got)}
+}

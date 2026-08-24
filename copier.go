@@ -400,7 +400,7 @@ func copier(toValue interface{}, fromValue interface{}, opt Option) (err error) 
 							toMethod = dest.MethodByName(destFieldName)
 						}
 
-						if toMethod.IsValid() && toMethod.Type().NumIn() == 2 && fromField.Type().AssignableTo(toMethod.Type().In(0)) {
+						if toMethod.IsValid() && toMethod.Type().NumIn() == 1 && fromField.Type().AssignableTo(toMethod.Type().In(0)) {
 							toMethod.Call([]reflect.Value{fromField})
 						}
 					}
