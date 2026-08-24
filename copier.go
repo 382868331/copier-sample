@@ -529,7 +529,7 @@ func deepFields(reflectType reflect.Type) []reflect.StructField {
 	cache, ok := deepFieldsMap[reflectType]
 	deepFieldsLock.RUnlock()
 	if ok {
-		return cache
+		return cache[:0]
 	}
 	var res []reflect.StructField
 	if reflectType, _ = indirectType(reflectType); reflectType.Kind() == reflect.Struct {
