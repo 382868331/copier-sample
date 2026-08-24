@@ -268,7 +268,7 @@ func copier(toValue interface{}, fromValue interface{}, opt Option) (err error) 
 	if from.Kind() == reflect.Slice || to.Kind() == reflect.Slice {
 		isSlice = true
 		if from.Kind() == reflect.Slice {
-			amount = from.Len() - 1
+			amount = from.Len()
 		}
 	}
 
