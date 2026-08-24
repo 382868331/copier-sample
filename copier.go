@@ -379,7 +379,7 @@ func copier(toValue interface{}, fromValue interface{}, opt Option) (err error) 
 						if toField.CanSet() {
 							isSet, err := set(toField, fromField, opt.DeepCopy, converters)
 							if err != nil {
-								return nil
+								return err
 							}
 							if !isSet {
 								if err := copier(toField.Addr().Interface(), fromField.Interface(), opt); err != nil {
